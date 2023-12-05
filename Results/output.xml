@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.0 on darwin)" generated="20231206 03:58:02.863" rpa="false" schemaversion="4">
+<suite id="s1" name="Amazon" source="/Users/benishhussain/PycharmProjects/AmazonAutomation/Tests/Amazon.robot">
+<test id="s1-t1" name="User should be able to Sign In" line="9">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.1s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20231206 03:58:03.095" endtime="20231206 03:58:03.096"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20231206 03:58:03.096" endtime="20231206 03:58:03.096"/>
+</kw>
+<kw name="Start testing" library="Common">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BROWSER_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231206 03:58:03.097" level="INFO">Opening browser 'chrome' to base url 'https://www.amazon.com/'.</msg>
+<status status="PASS" starttime="20231206 03:58:03.096" endtime="20231206 03:58:08.242"/>
+</kw>
+<status status="PASS" starttime="20231206 03:58:03.096" endtime="20231206 03:58:08.249"/>
+</kw>
+<kw name="Open SignIn Page" library="Amazonres">
+<kw name="Select the SignIn button" library="SignIn">
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>//*[@id="nav-link-accountList"]</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20231206 03:58:08.264" level="INFO">Simulating Mouse Over on element '//*[@id="nav-link-accountList"]'.</msg>
+<status status="PASS" starttime="20231206 03:58:08.260" endtime="20231206 03:58:08.811"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>//*[@id="nav-flyout-ya-signin"]/a</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20231206 03:58:08.812" level="INFO">Clicking link '//*[@id="nav-flyout-ya-signin"]/a'.</msg>
+<status status="PASS" starttime="20231206 03:58:08.811" endtime="20231206 03:58:10.015"/>
+</kw>
+<status status="PASS" starttime="20231206 03:58:08.259" endtime="20231206 03:58:10.015"/>
+</kw>
+<kw name="Load" library="SignIn">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Sign in</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20231206 03:58:10.016" endtime="20231206 03:58:10.145"/>
+</kw>
+<status status="PASS" starttime="20231206 03:58:10.016" endtime="20231206 03:58:10.146"/>
+</kw>
+<kw name="Add email and password" library="SignIn">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=ap_email</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231206 03:58:10.148" level="INFO">Typing text 'nasirhussainbeenish77@gmail.com' into text field 'id=ap_email'.</msg>
+<status status="PASS" starttime="20231206 03:58:10.147" endtime="20231206 03:58:10.828"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=continue</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231206 03:58:10.829" level="INFO">Clicking button 'id=continue'.</msg>
+<status status="PASS" starttime="20231206 03:58:10.829" endtime="20231206 03:58:12.072"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Forgot your password?</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20231206 03:58:12.072" endtime="20231206 03:58:12.201"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=ap_password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231206 03:58:12.203" level="INFO">Typing text 'Password' into text field 'id=ap_password'.</msg>
+<status status="PASS" starttime="20231206 03:58:12.202" endtime="20231206 03:58:12.592"/>
+</kw>
+<status status="PASS" starttime="20231206 03:58:10.146" endtime="20231206 03:58:12.593"/>
+</kw>
+<status status="PASS" starttime="20231206 03:58:08.254" endtime="20231206 03:58:12.593"/>
+</kw>
+<kw name="load landing page" library="Amazonres">
+<kw name="Sign in to Landing Page" library="LandingPage">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=signInSubmit</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231206 03:58:12.595" level="INFO">Clicking button 'id=signInSubmit'.</msg>
+<status status="PASS" starttime="20231206 03:58:12.594" endtime="20231206 03:58:13.008"/>
+</kw>
+<status status="PASS" starttime="20231206 03:58:12.594" endtime="20231206 03:58:13.009"/>
+</kw>
+<kw name="Verify Landing Page" library="LandingPage">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>id=nav-logo-sprites</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<msg timestamp="20231206 03:58:18.101" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=119.0.6045.199)
+Stacktrace:
+0   chromedriver                        0x0000000109536d28 chromedriver + 4795688
+1   chromedriver                        0x000000010952e2b3 chromedriver + 4760243
+2   chromedriver                        0x000000010910788d chromedriver + 407693
+3   chromedriver                        0x00000001090db758 chromedriver + 227160
+4   chromedriver                        0x000000010918350f chromedriver + 914703
+5   chromedriver                        0x00000001091990e6 chromedriver + 1003750
+6   chromedriver                        0x000000010917da73 chromedriver + 891507
+7   chromedriver                        0x0000000109148143 chromedriver + 672067
+8   chromedriver                        0x000000010914931e chromedriver + 676638
+9   chromedriver                        0x00000001094f7795 chromedriver + 4536213
+10  chromedriver                        0x00000001094fc853 chromedriver + 4556883
+11  chromedriver                        0x00000001094dd001 chromedriver + 4427777
+12  chromedriver                        0x00000001094fd59d chromedriver + 4560285
+13  chromedriver                        0x00000001094ce48c chromedriver + 4367500
+14  chromedriver                        0x000000010951d0e8 chromedriver + 4690152
+15  chromedriver                        0x000000010951d29e chromedriver + 4690590
+16  chromedriver                        0x000000010952deee chromedriver + 4759278
+17  libsystem_pthread.dylib             0x00007ff817988259 _pthread_start + 125
+18  libsystem_pthread.dylib             0x00007ff817983c7b thread_start + 15
+</msg>
+<msg timestamp="20231206 03:58:18.102" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=119.0.6045.199)
+Stacktrace:
+0   chromedriver                        0x0000000109536d28 chromedriver + 4795688
+1   chromedriver                        0x000000010952e2b3 chromedriver + 4760243
+2   chromedriver                        0x000000010910788d chromedriver + 407693
+3   chromedriver                        0x00000001090db758 chromedriver + 227160
+4   chromedriver                        0x000000010918350f chromedriver + 914703
+5   chromedriver                        0x00000001091990e6 chromedriver + 1003750
+6   chromedriver                        0x000000010917da73 chromedriver + 891507
+7   chromedriver                        0x0000000109148143 chromedriver + 672067
+8   chromedriver                        0x000000010914931e chromedriver + 676638
+9   chromedriver                        0x00000001094f7795 chromedriver + 4536213
+10  chromedriver                        0x00000001094fc853 chromedriver + 4556883
+11  chromedriver                        0x00000001094dd001 chromedriver + 4427777
+12  chromedriver                        0x00000001094fd59d chromedriver + 4560285
+13  chromedriver                        0x00000001094ce48c chromedriver + 4367500
+14  chromedriver                        0x000000010951d0e8 chromedriver + 4690152
+15  chromedriver                        0x000000010951d29e chromedriver + 4690590
+16  chromedriver                        0x000000010952deee chromedriver + 4759278
+17  libsystem_pthread.dylib             0x00007ff817988259 _pthread_start + 125
+18  libsystem_pthread.dylib             0x00007ff817983c7b thread_start + 15
+</msg>
+<status status="FAIL" starttime="20231206 03:58:13.010" endtime="20231206 03:58:18.144"/>
+</kw>
+<status status="FAIL" starttime="20231206 03:58:13.009" endtime="20231206 03:58:18.144"/>
+</kw>
+<status status="FAIL" starttime="20231206 03:58:12.593" endtime="20231206 03:58:18.144"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20231206 03:58:18.145" endtime="20231206 03:58:18.145"/>
+</kw>
+<kw name="End testing" library="Common">
+<status status="NOT RUN" starttime="20231206 03:58:18.145" endtime="20231206 03:58:18.145"/>
+</kw>
+<status status="FAIL" starttime="20231206 03:58:03.095" endtime="20231206 03:58:18.145">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=119.0.6045.199)
+Stacktrace:
+0   chromedriver                        0x0000000109536d28 chromedriver + 4795688
+1   chromedriver                        0x000000010952e2b3 chromedriver + 4760243
+2   chromedriver                        0x000000010910788d chromedriver + 407693
+3   chromedriver                        0x00000001090db758 chromedriver + 227160
+4   chromedriver                        0x000000010918350f chromedriver + 914703
+5   chromedriver                        0x00000001091990e6 chromedriver + 1003750
+6   chromedriver                        0x000000010917da73 chromedriver + 891507
+7   chromedriver                        0x0000000109148143 chromedriver + 672067
+    [ Message content over the limit has been removed. ]
+...hromedriver                        0x000000010914931e chromedriver + 676638
+9   chromedriver                        0x00000001094f7795 chromedriver + 4536213
+10  chromedriver                        0x00000001094fc853 chromedriver + 4556883
+11  chromedriver                        0x00000001094dd001 chromedriver + 4427777
+12  chromedriver                        0x00000001094fd59d chromedriver + 4560285
+13  chromedriver                        0x00000001094ce48c chromedriver + 4367500
+14  chromedriver                        0x000000010951d0e8 chromedriver + 4690152
+15  chromedriver                        0x000000010951d29e chromedriver + 4690590
+16  chromedriver                        0x000000010952deee chromedriver + 4759278
+17  libsystem_pthread.dylib             0x00007ff817988259 _pthread_start + 125
+18  libsystem_pthread.dylib             0x00007ff817983c7b thread_start + 15</status>
+</test>
+<test id="s1-t2" name="User Should be able to add product to cart" line="22">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.1s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20231206 03:58:18.147" endtime="20231206 03:58:18.148"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20231206 03:58:18.148" endtime="20231206 03:58:18.253"/>
+</kw>
+<kw name="Start testing" library="Common">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BROWSER_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231206 03:58:18.256" level="INFO">Opening browser 'chrome' to base url 'https://www.amazon.com/'.</msg>
+<status status="PASS" starttime="20231206 03:58:18.255" endtime="20231206 03:58:23.097"/>
+</kw>
+<status status="PASS" starttime="20231206 03:58:18.254" endtime="20231206 03:58:23.097"/>
+</kw>
+<kw name="Open SignIn Page" library="Amazonres">
+<kw name="Select the SignIn button" library="SignIn">
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>//*[@id="nav-link-accountList"]</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20231206 03:58:23.102" level="INFO">Simulating Mouse Over on element '//*[@id="nav-link-accountList"]'.</msg>
+<status status="PASS" starttime="20231206 03:58:23.100" endtime="20231206 03:58:23.654"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>//*[@id="nav-flyout-ya-signin"]/a</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20231206 03:58:23.656" level="INFO">Clicking link '//*[@id="nav-flyout-ya-signin"]/a'.</msg>
+<status status="PASS" starttime="20231206 03:58:23.655" endtime="20231206 03:58:25.126"/>
+</kw>
+<status status="PASS" starttime="20231206 03:58:23.099" endtime="20231206 03:58:25.126"/>
+</kw>
+<kw name="Load" library="SignIn">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Sign in</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20231206 03:58:25.126" endtime="20231206 03:58:25.245"/>
+</kw>
+<status status="PASS" starttime="20231206 03:58:25.126" endtime="20231206 03:58:25.245"/>
+</kw>
+<kw name="Add email and password" library="SignIn">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=ap_email</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231206 03:58:25.246" level="INFO">Typing text 'nasirhussainbeenish77@gmail.com' into text field 'id=ap_email'.</msg>
+<status status="PASS" starttime="20231206 03:58:25.245" endtime="20231206 03:58:25.876"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=continue</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231206 03:58:25.876" level="INFO">Clicking button 'id=continue'.</msg>
+<status status="PASS" starttime="20231206 03:58:25.876" endtime="20231206 03:58:27.371"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Forgot your password?</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20231206 03:58:27.372" endtime="20231206 03:58:27.502"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=ap_password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231206 03:58:27.503" level="INFO">Typing text 'Password' into text field 'id=ap_password'.</msg>
+<status status="PASS" starttime="20231206 03:58:27.502" endtime="20231206 03:58:27.896"/>
+</kw>
+<status status="PASS" starttime="20231206 03:58:25.245" endtime="20231206 03:58:27.896"/>
+</kw>
+<status status="PASS" starttime="20231206 03:58:23.098" endtime="20231206 03:58:27.897"/>
+</kw>
+<kw name="load landing page" library="Amazonres">
+<kw name="Sign in to Landing Page" library="LandingPage">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=signInSubmit</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231206 03:58:27.900" level="INFO">Clicking button 'id=signInSubmit'.</msg>
+<status status="PASS" starttime="20231206 03:58:27.899" endtime="20231206 03:58:28.317"/>
+</kw>
+<status status="PASS" starttime="20231206 03:58:27.899" endtime="20231206 03:58:28.318"/>
+</kw>
+<kw name="Verify Landing Page" library="LandingPage">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>id=nav-logo-sprites</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<msg timestamp="20231206 03:58:31.232" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=119.0.6045.199)
+Stacktrace:
+0   chromedriver                        0x0000000107082d28 chromedriver + 4795688
+1   chromedriver                        0x000000010707a2b3 chromedriver + 4760243
+2   chromedriver                        0x0000000106c5388d chromedriver + 407693
+3   chromedriver                        0x0000000106c27758 chromedriver + 227160
+4   chromedriver                        0x0000000106ccf50f chromedriver + 914703
+5   chromedriver                        0x0000000106ce50e6 chromedriver + 1003750
+6   chromedriver                        0x0000000106cc9a73 chromedriver + 891507
+7   chromedriver                        0x0000000106c94143 chromedriver + 672067
+8   chromedriver                        0x0000000106c9531e chromedriver + 676638
+9   chromedriver                        0x0000000107043795 chromedriver + 4536213
+10  chromedriver                        0x0000000107048853 chromedriver + 4556883
+11  chromedriver                        0x0000000107029001 chromedriver + 4427777
+12  chromedriver                        0x000000010704959d chromedriver + 4560285
+13  chromedriver                        0x000000010701a48c chromedriver + 4367500
+14  chromedriver                        0x00000001070690e8 chromedriver + 4690152
+15  chromedriver                        0x000000010706929e chromedriver + 4690590
+16  chromedriver                        0x0000000107079eee chromedriver + 4759278
+17  libsystem_pthread.dylib             0x00007ff817988259 _pthread_start + 125
+18  libsystem_pthread.dylib             0x00007ff817983c7b thread_start + 15
+</msg>
+<msg timestamp="20231206 03:58:31.233" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=119.0.6045.199)
+Stacktrace:
+0   chromedriver                        0x0000000107082d28 chromedriver + 4795688
+1   chromedriver                        0x000000010707a2b3 chromedriver + 4760243
+2   chromedriver                        0x0000000106c5388d chromedriver + 407693
+3   chromedriver                        0x0000000106c27758 chromedriver + 227160
+4   chromedriver                        0x0000000106ccf50f chromedriver + 914703
+5   chromedriver                        0x0000000106ce50e6 chromedriver + 1003750
+6   chromedriver                        0x0000000106cc9a73 chromedriver + 891507
+7   chromedriver                        0x0000000106c94143 chromedriver + 672067
+8   chromedriver                        0x0000000106c9531e chromedriver + 676638
+9   chromedriver                        0x0000000107043795 chromedriver + 4536213
+10  chromedriver                        0x0000000107048853 chromedriver + 4556883
+11  chromedriver                        0x0000000107029001 chromedriver + 4427777
+12  chromedriver                        0x000000010704959d chromedriver + 4560285
+13  chromedriver                        0x000000010701a48c chromedriver + 4367500
+14  chromedriver                        0x00000001070690e8 chromedriver + 4690152
+15  chromedriver                        0x000000010706929e chromedriver + 4690590
+16  chromedriver                        0x0000000107079eee chromedriver + 4759278
+17  libsystem_pthread.dylib             0x00007ff817988259 _pthread_start + 125
+18  libsystem_pthread.dylib             0x00007ff817983c7b thread_start + 15
+</msg>
+<status status="FAIL" starttime="20231206 03:58:28.318" endtime="20231206 03:58:31.235"/>
+</kw>
+<status status="FAIL" starttime="20231206 03:58:28.318" endtime="20231206 03:58:31.235"/>
+</kw>
+<status status="FAIL" starttime="20231206 03:58:27.898" endtime="20231206 03:58:31.235"/>
+</kw>
+<kw name="Search Item" library="Amazonres">
+<status status="NOT RUN" starttime="20231206 03:58:31.235" endtime="20231206 03:58:31.235"/>
+</kw>
+<kw name="Search Results" library="Amazonres">
+<status status="NOT RUN" starttime="20231206 03:58:31.236" endtime="20231206 03:58:31.236"/>
+</kw>
+<kw name="Product Detail Page" library="Amazonres">
+<status status="NOT RUN" starttime="20231206 03:58:31.236" endtime="20231206 03:58:31.236"/>
+</kw>
+<kw name="Add to cart" library="Amazonres">
+<status status="NOT RUN" starttime="20231206 03:58:31.236" endtime="20231206 03:58:31.236"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20231206 03:58:31.236" endtime="20231206 03:58:31.236"/>
+</kw>
+<kw name="End testing" library="Common">
+<status status="NOT RUN" starttime="20231206 03:58:31.237" endtime="20231206 03:58:31.237"/>
+</kw>
+<status status="FAIL" starttime="20231206 03:58:18.147" endtime="20231206 03:58:31.237">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=119.0.6045.199)
+Stacktrace:
+0   chromedriver                        0x0000000107082d28 chromedriver + 4795688
+1   chromedriver                        0x000000010707a2b3 chromedriver + 4760243
+2   chromedriver                        0x0000000106c5388d chromedriver + 407693
+3   chromedriver                        0x0000000106c27758 chromedriver + 227160
+4   chromedriver                        0x0000000106ccf50f chromedriver + 914703
+5   chromedriver                        0x0000000106ce50e6 chromedriver + 1003750
+6   chromedriver                        0x0000000106cc9a73 chromedriver + 891507
+7   chromedriver                        0x0000000106c94143 chromedriver + 672067
+    [ Message content over the limit has been removed. ]
+...hromedriver                        0x0000000106c9531e chromedriver + 676638
+9   chromedriver                        0x0000000107043795 chromedriver + 4536213
+10  chromedriver                        0x0000000107048853 chromedriver + 4556883
+11  chromedriver                        0x0000000107029001 chromedriver + 4427777
+12  chromedriver                        0x000000010704959d chromedriver + 4560285
+13  chromedriver                        0x000000010701a48c chromedriver + 4367500
+14  chromedriver                        0x00000001070690e8 chromedriver + 4690152
+15  chromedriver                        0x000000010706929e chromedriver + 4690590
+16  chromedriver                        0x0000000107079eee chromedriver + 4759278
+17  libsystem_pthread.dylib             0x00007ff817988259 _pthread_start + 125
+18  libsystem_pthread.dylib             0x00007ff817983c7b thread_start + 15</status>
+</test>
+<doc>This is test automation for Amazon website</doc>
+<status status="FAIL" starttime="20231206 03:58:02.864" endtime="20231206 03:58:31.240"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="2" skip="0" id="s1" name="Amazon">Amazon</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20231206 03:58:18.101" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=119.0.6045.199)
+Stacktrace:
+0   chromedriver                        0x0000000109536d28 chromedriver + 4795688
+1   chromedriver                        0x000000010952e2b3 chromedriver + 4760243
+2   chromedriver                        0x000000010910788d chromedriver + 407693
+3   chromedriver                        0x00000001090db758 chromedriver + 227160
+4   chromedriver                        0x000000010918350f chromedriver + 914703
+5   chromedriver                        0x00000001091990e6 chromedriver + 1003750
+6   chromedriver                        0x000000010917da73 chromedriver + 891507
+7   chromedriver                        0x0000000109148143 chromedriver + 672067
+8   chromedriver                        0x000000010914931e chromedriver + 676638
+9   chromedriver                        0x00000001094f7795 chromedriver + 4536213
+10  chromedriver                        0x00000001094fc853 chromedriver + 4556883
+11  chromedriver                        0x00000001094dd001 chromedriver + 4427777
+12  chromedriver                        0x00000001094fd59d chromedriver + 4560285
+13  chromedriver                        0x00000001094ce48c chromedriver + 4367500
+14  chromedriver                        0x000000010951d0e8 chromedriver + 4690152
+15  chromedriver                        0x000000010951d29e chromedriver + 4690590
+16  chromedriver                        0x000000010952deee chromedriver + 4759278
+17  libsystem_pthread.dylib             0x00007ff817988259 _pthread_start + 125
+18  libsystem_pthread.dylib             0x00007ff817983c7b thread_start + 15
+</msg>
+<msg timestamp="20231206 03:58:31.232" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=119.0.6045.199)
+Stacktrace:
+0   chromedriver                        0x0000000107082d28 chromedriver + 4795688
+1   chromedriver                        0x000000010707a2b3 chromedriver + 4760243
+2   chromedriver                        0x0000000106c5388d chromedriver + 407693
+3   chromedriver                        0x0000000106c27758 chromedriver + 227160
+4   chromedriver                        0x0000000106ccf50f chromedriver + 914703
+5   chromedriver                        0x0000000106ce50e6 chromedriver + 1003750
+6   chromedriver                        0x0000000106cc9a73 chromedriver + 891507
+7   chromedriver                        0x0000000106c94143 chromedriver + 672067
+8   chromedriver                        0x0000000106c9531e chromedriver + 676638
+9   chromedriver                        0x0000000107043795 chromedriver + 4536213
+10  chromedriver                        0x0000000107048853 chromedriver + 4556883
+11  chromedriver                        0x0000000107029001 chromedriver + 4427777
+12  chromedriver                        0x000000010704959d chromedriver + 4560285
+13  chromedriver                        0x000000010701a48c chromedriver + 4367500
+14  chromedriver                        0x00000001070690e8 chromedriver + 4690152
+15  chromedriver                        0x000000010706929e chromedriver + 4690590
+16  chromedriver                        0x0000000107079eee chromedriver + 4759278
+17  libsystem_pthread.dylib             0x00007ff817988259 _pthread_start + 125
+18  libsystem_pthread.dylib             0x00007ff817983c7b thread_start + 15
+</msg>
+</errors>
+</robot>
